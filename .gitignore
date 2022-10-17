@@ -17,6 +17,7 @@ frontend/out/
 
 # local env files
 frontend/.env.local
+backend/.envrc.local
 
 #ide
 .idea/*
