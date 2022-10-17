@@ -1,0 +1,33 @@
+# dependencies
+*/node_modules/
+
+# testing
+/coverage
+
+# next.js
+frontend/.next/
+frontend/out/
+
+# production
+*/build
+
+# misc
+.DS_Store
+*.pem
+
+# local env files
+frontend/.env.local
+
+#ide
+.idea/*
+.vscode/
+
+#yarn
+.yarn/*
+!.yarn/releases
+!.yarn/plugins
+!.yarn/versions
+.pnp.*
+
+#storybook
+storybook-static
