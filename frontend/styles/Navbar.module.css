@@ -1,0 +1,23 @@
+.navbar ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0; padding:0;
+}
+
+.navbar ul li{
+    margin:0 1rem;
+}
+
+.navbar ul li a{
+    font-size: 2rem;
+    color:#333;
+    transition: .2s linear;
+}
+
+
+.navbar ul li .active,
+.navbar ul li a:hover{
+    color: #0098a1;
+}

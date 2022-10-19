@@ -1,0 +1,70 @@
+.card{
+    width:30rem;
+    margin:2rem;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    overflow: hidden;
+    position: relative;
+}
+
+.card img{
+    height:25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content{
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.title{
+    color:#0098a1;
+    font-size: 3rem;
+}
+
+.content p{
+    color:#333;
+    font-size: 1.3rem;
+    padding:1rem;
+}
+
+.stars {
+    padding:0 .2rem;
+    font-size: 2rem;
+    color:gold;
+}
+
+.btn{
+    font-size: 1.7rem;
+    margin-top: 1.4rem;
+    height:3.5rem;
+    width:12rem;
+    border-radius: .5rem;
+    outline: none;
+    border:none;
+    background: #0098a1;
+    color:#fff;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.btn:hover{
+    background: none;
+    border:.2rem solid #0098a1;
+    color:#0098a1;
+}
+
+.discount{
+    position: absolute;
+    top:1rem; left: 1rem;
+    display: block;
+    height:3.5rem;
+    width:6rem;
+    background: #ff3300;
+    color:#fff;
+    line-height: 4rem;
+    text-align: center;
+    font-size: 2rem;
+}

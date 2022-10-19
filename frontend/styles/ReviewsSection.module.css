@@ -1,0 +1,28 @@
+.review{
+    background: linear-gradient(#0098a1, #0098a1) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+}
+
+.heading{
+    color:#fff;
+    padding-bottom: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 6rem;
+    font-size: 3.5rem;
+    text-align: center;
+    letter-spacing: .2rem;
+}
+
+.heading span{
+    color:gold;
+}
+
+.boxContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}

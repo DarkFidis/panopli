@@ -1,0 +1,12 @@
+.feature{
+    min-height:100vh;
+    background:#f9f9f9;
+}
+
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}

@@ -1,0 +1,31 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem;
+    background:#222;
+}
+
+.credit{
+    font-size: 2rem;
+    color:#eee;
+}
+
+.credit span{
+    color:#0098a1;
+}
+
+.icons a{
+    font-size: 4rem;
+    margin:0 .5rem;
+    height:4rem;
+    width:4rem;
+    line-height: 3.5rem;
+    text-align: center;
+    color:#fff;
+    transition: .2s linear;
+}
+
+.icons a:hover{
+    color:#0098a1;
+}

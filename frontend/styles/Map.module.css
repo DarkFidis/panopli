@@ -1,0 +1,35 @@
+.home{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  padding:2rem 10rem;
+}
+
+.video video{
+  position: absolute;
+  top:0; left:0;
+  height:100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.content{
+  margin-top: 7rem;
+}
+
+.content h1{
+  font-size: 6.1vw;
+  color:#fff;
+  text-shadow: 0 .3rem .5rem #000;
+}
+
+.content p{
+  font-size: 1.5vw;
+  color:#eee;
+  text-shadow: 0 .3rem .5rem #000;
+  padding-left: 2rem;
+  border-left: .3rem solid #ddd;
+}

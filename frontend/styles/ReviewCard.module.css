@@ -1,0 +1,37 @@
+.box{
+    width:35rem;
+    margin:4rem 2rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    box-shadow: 0 .3rem .5rem #000;
+    background:#fff;
+}
+
+.image{
+    margin-top: -5rem;
+}
+
+.image img{
+    height:10rem;
+    width:10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: .7rem solid #fff;
+}
+
+.content h3{
+    font-size: 2rem;
+    color:#0098a1;
+}
+
+.content p{
+    font-size: 1.4rem;
+    color:#333;
+    padding:.5rem 1.5rem;
+}
+
+.stars {
+    color:gold;
+    font-size: 1.7rem;
+    padding:1rem .1rem;
+}
