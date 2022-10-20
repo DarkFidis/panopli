@@ -9,3 +9,13 @@ export const cluster = nodeConfig.has('cluster')
 export const log = nodeConfig.has('log')
   ? nodeConfig.get<Config['log']>('log')
   : { name: 'Express-template' }
+
+const mongoConfiguration = nodeConfig.has('mongo')
+  ? nodeConfig.get<Config['mongo']>('mongo')
+  : { host: 'localhost:27017', dbName: 'tourisme' }
+
+const { MONGO_PASSWORD, MONGO_USER } = process.env
+const { dbName, host } = mongoConfiguration
+export const mongo = {
+  url: `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${host}/${dbName}`
+}

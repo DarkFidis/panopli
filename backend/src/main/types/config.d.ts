@@ -4,7 +4,13 @@ export interface LogConfig {
   name: string
 }
 
+export interface MongoConf {
+  dbName: string
+  host: string
+}
+
 export interface Config {
   cluster: ClusterConfig
   log: LogConfig
+  mongo: MongoConf
 }

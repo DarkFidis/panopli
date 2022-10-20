@@ -1,6 +1,7 @@
 import { log } from './log'
 import { webServer } from './server'
 import { Workerable } from './types/worker'
+import { mongoClient } from "./mongo";
 
 const worker: Workerable = {
   handleSignal: async (name) => {
@@ -22,12 +23,14 @@ const worker: Workerable = {
       }
     })
     webServer.init()
+    await mongoClient.start()
     await webServer.start()
     log.info(`/!\\ to stop worker : kill -s SIGTERM ${process.pid}`)
   },
   shutdown: async (exitCode = 1) => {
     try {
       await webServer.stop()
+      await mongoClient.stop()
       process.exit(exitCode)
     } catch (err) {
       log.error(err)
