@@ -19,6 +19,9 @@ frontend/out/
 frontend/.env.local
 backend/.envrc.local
 
+# local dist files
+backend/dist/
+
 #ide
 .idea/*
 .vscode/
