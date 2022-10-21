@@ -1,17 +1,18 @@
-import {Loggerable} from "../../main/types/logger";
-import {when} from "jest-when";
+import { when } from 'jest-when'
+
+import { Loggerable } from '../../main/types/logger'
 
 describe('mongo', () => {
   let log: jest.Mocked<Loggerable>
-  let MongoClient
+  let MongoClient: jest.Mock
   const config = {
-    url: 'mongodb://url'
+    url: 'mongodb://url',
   }
   beforeAll(() => {
     jest.doMock('../../main/log')
     ;({ log } = require('../../main/log'))
     jest.doMock('../../main/config', () => ({
-      mongo: config
+      mongo: config,
     }))
     jest.doMock('../../main/services/mongo-client')
     ;({ MongoClient } = require('../../main/services/mongo-client'))

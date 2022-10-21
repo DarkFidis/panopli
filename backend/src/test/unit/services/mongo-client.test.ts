@@ -1,12 +1,13 @@
-import {MongoClientable, MongoConfig, StaticMongoClientable} from "../../../main/types/mongo";
-import {Loggerable} from "../../../main/types/logger";
-import {when} from "jest-when";
+import { when } from 'jest-when'
+
+import { Loggerable } from '../../../main/types/logger'
+import { MongoClientable, MongoConfig, StaticMongoClientable } from '../../../main/types/mongo'
 
 describe('MongoClient', () => {
   let log: jest.Mocked<Loggerable>
   let MongoClient: StaticMongoClientable
   const config: MongoConfig = {
-    url: 'mongodb://url_de_test'
+    url: 'mongodb://url_de_test',
   }
   let connect: jest.Mock
   beforeAll(() => {
@@ -27,7 +28,7 @@ describe('MongoClient', () => {
   describe('instance', () => {
     let mongoClient: MongoClientable
     const connection = {
-      disconnect: jest.fn()
+      disconnect: jest.fn(),
     }
     beforeEach(() => {
       mongoClient = new MongoClient(log, config)

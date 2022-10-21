@@ -1,9 +1,9 @@
-import { staticImplements } from "../utils/helper";
+import { connect, Mongoose } from 'mongoose'
 
-import { ServiceBase } from "./service-base";
-import { Loggerable } from "../types/logger";
-import { MongoClientable, MongoConfig, StaticMongoClientable } from "../types/mongo";
-import { Mongoose, connect } from "mongoose";
+import { Loggerable } from '../types/logger'
+import { MongoClientable, MongoConfig, StaticMongoClientable } from '../types/mongo'
+import { staticImplements } from '../utils/helper'
+import { ServiceBase } from './service-base'
 
 @staticImplements<StaticMongoClientable>()
 export class MongoClient extends ServiceBase<MongoConfig> implements MongoClientable {

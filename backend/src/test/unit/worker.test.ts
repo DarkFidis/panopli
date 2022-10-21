@@ -1,9 +1,9 @@
 import { when } from 'jest-when'
 
 import { Loggerable } from '../../main/types/logger'
+import { MongoClientable } from '../../main/types/mongo'
 import { WebServerable } from '../../main/types/web-server'
 import { Workerable } from '../../main/types/worker'
-import {MongoClientable} from "../../main/types/mongo";
 
 describe('worker unit tests', () => {
   let mockProcess: { exit: jest.SpyInstance; on: jest.SpyInstance }

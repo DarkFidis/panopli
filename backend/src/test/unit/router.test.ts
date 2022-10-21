@@ -15,6 +15,7 @@ describe('router unit tests', () => {
   let registerApp: jest.Mocked<RegisterApp>
   let helloWorldMw: jest.Mock
   let toExpressMw: jest.Mock
+  let placesRouter: jest.Mock
   beforeAll(() => {
     jsonBodyParser = jest.fn()
     urlencodedBodyParser = jest.fn()
@@ -28,6 +29,8 @@ describe('router unit tests', () => {
     ;({ toExpressMw } = require('../../main/utils/helper'))
     jest.doMock('../../main/middlewares/hello-world')
     ;({ helloWorldMw } = require('../../main/middlewares/hello-world'))
+    jest.doMock('../../main/routes', () => jest.fn())
+    placesRouter = require('../../main/routes')
     when(bodyParser.json).calledWith().mockReturnValue(jsonBodyParser)
     when(bodyParser.urlencoded)
       .calledWith({ extended: false })
@@ -63,6 +66,7 @@ describe('router unit tests', () => {
         rawBodyParser,
       )
       expect(app.get).toHaveBeenCalledWith('/', helloWorldExpressMw)
+      expect(app.use).toHaveBeenCalledWith('/api', placesRouter)
     })
   })
 })

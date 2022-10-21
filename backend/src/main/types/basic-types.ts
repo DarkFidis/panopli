@@ -10,4 +10,6 @@ export interface Mapable<T> {
 
 export type Optional<T> = T | undefined
 
+export type CatchParam = string | Error | undefined
+
 export declare type Primitive = string | number | boolean | undefined | null

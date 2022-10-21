@@ -12,10 +12,10 @@ export const log = nodeConfig.has('log')
 
 const mongoConfiguration = nodeConfig.has('mongo')
   ? nodeConfig.get<Config['mongo']>('mongo')
-  : { host: 'localhost:27017', dbName: 'tourisme' }
+  : { dbName: 'tourisme', host: 'localhost:27017' }
 
 const { MONGO_PASSWORD, MONGO_USER } = process.env
 const { dbName, host } = mongoConfiguration
 export const mongo = {
-  url: `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${host}/${dbName}`
+  url: `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${host}/${dbName}`,
 }

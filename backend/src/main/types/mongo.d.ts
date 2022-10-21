@@ -1,6 +1,7 @@
-import { Serviceable } from "./service";
-import { Loggerable } from "./logger";
-import { ObjectId } from "mongodb";
+import { ObjectId } from 'mongodb'
+
+import { Loggerable } from './logger'
+import { Serviceable } from './service'
 
 export interface StaticMongoClientable {
   new (log: Loggerable, config: MongoConfig): MongoClientable
@@ -15,4 +16,4 @@ export interface MongoConfig {
   url: string
 }
 
-export type Ref<T> = T | ObjectId;
+export type Ref<T> = T | ObjectId

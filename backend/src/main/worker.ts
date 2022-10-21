@@ -1,7 +1,7 @@
 import { log } from './log'
+import { mongoClient } from './mongo'
 import { webServer } from './server'
 import { Workerable } from './types/worker'
-import { mongoClient } from "./mongo";
 
 const worker: Workerable = {
   handleSignal: async (name) => {
