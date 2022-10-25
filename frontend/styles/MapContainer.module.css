@@ -1,0 +1,27 @@
+.home{
+  min-height: 90vh;
+  position: relative;
+}
+
+.content{
+  margin-top: 7rem;
+}
+
+.content h1{
+  font-size: 6.1vw;
+  color:#fff;
+  text-shadow: 0 .3rem .5rem #000;
+}
+
+.content p{
+  font-size: 1.5vw;
+  color:#eee;
+  text-shadow: 0 .3rem .5rem #000;
+  padding-left: 2rem;
+  border-left: .3rem solid #ddd;
+}
+
+.tampon {
+  height: 54px;
+  width: 100%;
+}

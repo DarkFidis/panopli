@@ -1,21 +1,19 @@
 import type { NextPage } from 'next'
 import {Header} from "../components/Header";
-import {Map} from '../components/Map'
 import {About} from "../components/About";
 import {ReviewsSection} from "../components/ReviewsSection";
-import {Places} from "../components/Feature";
 import {Footer} from "../components/Footer";
+import {MapTainer} from "../containers/MapContainer";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <Header/>
-      <Map/>
-      <Places />
-      <About />
-      <ReviewsSection />
-      <Footer />
-    </>
+      <>
+        <Header/>
+        <MapTainer />
+        <About />
+        <ReviewsSection />
+        <Footer />
+      </>
   )
 }
 

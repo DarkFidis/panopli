@@ -1,0 +1,72 @@
+.card{
+    width:30rem;
+    margin:2rem;
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .3rem .5rem rgba(0,0,0,.3);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+
+.active {
+    box-shadow: 0 .9rem 1.5rem rgba(255,159,99,1);
+}
+
+.card img{
+    height:25rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.content{
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+.title{
+    color:#0098a1;
+    font-size: 3rem;
+}
+
+.content p{
+    color:#333;
+    font-size: 1.3rem;
+    padding:1rem;
+}
+
+.stars {
+    padding:0 .2rem;
+    font-size: 2rem;
+    color:gold;
+    display: flex;
+    justify-content: center;
+}
+
+.stars p {
+    font-size: 2rem;
+    color: #ff6633;
+    padding: 0;
+    max-width: 20px;
+    margin-left: 5px;
+}
+
+.btn{
+    font-size: 1.7rem;
+    margin-top: 1.4rem;
+    height:3.5rem;
+    width:12rem;
+    border-radius: .5rem;
+    outline: none;
+    border:none;
+    background: #0098a1;
+    color:#fff;
+    cursor: pointer;
+    transition: .2s linear;
+}
+
+.btn:hover{
+    background: none;
+    border:.2rem solid #0098a1;
+    color:#0098a1;
+}

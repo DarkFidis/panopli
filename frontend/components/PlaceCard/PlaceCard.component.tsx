@@ -1,25 +1,30 @@
 import React from "react";
-import styles from "../../styles/Card.module.css";
-import {CardProps} from "../../types/CardProps";
+import styles from "../../styles/PlaceCard.module.css";
+import {PlaceCardProps} from "../../types/PlaceCardProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-export const PlaceCard: React.FC<CardProps> = ({ imgUrl, title, stars, restoUrl}) => {
+export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place, setActivePlace }) => {
+  const { address, name, rating, website } = place.properties
+  const { city, postalCode, street } = address
+  const stars = Math.ceil(+rating)
   const arrayOfStars = Array.from(Array(stars).keys())
+  const activeStyle = isActive ? styles.active : ''
   return (
-    <div className={styles.card}>
-      <img src={imgUrl} alt=""/>
+    <div className={`${styles.card} ${activeStyle}`} onClick={() => setActivePlace(place._id)}>
+      <img src='images/resto-3.jpeg' alt=""/>
       <div className={styles.content}>
-        <h3 className={styles.title}>{title}</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam animi consequuntur ea molestias illo.
-          Porro error facilis obcaecati. Quisquam, placeat.</p>
+        <h3 className={styles.title}>{name}</h3>
+        <p>{street}</p>
+        <p>{postalCode}  {city}</p>
         <div className={styles.stars}>
           { arrayOfStars.map((_, key) => (
             <FontAwesomeIcon icon={faStar} key={key} className={styles.stars} />
           ))}
+          <p>{ rating }</p>
         </div>
-        <a href={restoUrl} target='_blank'>
-          <button className={styles.btn}>check out!</button>
+        <a href={website} target='_blank'>
+          <button className={styles.btn}>Site web</button>
         </a>
       </div>
     </div>

@@ -1,3 +1,10 @@
+.formContainer {
+    position: absolute;
+    left: 75%;
+    top: 20px;
+    z-index: 1001;
+}
+
 .formContainer form{
     margin-top: 8rem;
     padding:2rem;
@@ -33,7 +40,7 @@
     border-radius: .5rem;
 }
 
-.formContainer form input[type="submit"]{
+.formContainer form button{
     width:10rem;
     color:#fff;
     background:#0098a1;
@@ -43,7 +50,7 @@
     transition: .2s linear;
 }
 
-.formContainer form input[type="submit"]:hover{
+.formContainer form button:hover{
     border:.2rem solid #0098a1;
     color:#0098a1;
     background: none;

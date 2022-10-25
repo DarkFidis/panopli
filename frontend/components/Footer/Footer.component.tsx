@@ -6,7 +6,7 @@ import { faFacebook, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-i
 export const Footer: React.FC = () => (
   <section className={styles.footer}>
 
-    <h1 className={styles.credit}>design created by <span>mr. web designer</span> | all rights reserved.</h1>
+    <h1 className={styles.credit}>design inspiré de <span>mr. web designer</span> | tous droits réservés.</h1>
 
     <div className={styles.icons}>
       <a href="https://www.facebook.com/matteveanyes" target='_blank'>
