@@ -3,6 +3,7 @@ import styles from "../../styles/PlaceCard.module.css";
 import {PlaceCardProps} from "../../types/PlaceCardProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Image from 'next/image'
 
 export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place, setActivePlace }) => {
   const { address, name, rating, website } = place.properties
@@ -12,7 +13,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place, setActiveP
   const activeStyle = isActive ? styles.active : ''
   return (
     <div className={`${styles.card} ${activeStyle}`} onClick={() => setActivePlace(place._id)}>
-      <img src='images/resto-3.jpeg' alt=""/>
+      <Image src="images/resto-3.jpeg" alt=""/>
       <div className={styles.content}>
         <h3 className={styles.title}>{name}</h3>
         <p>{street}</p>
@@ -23,7 +24,7 @@ export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place, setActiveP
           ))}
           <p>{ rating }</p>
         </div>
-        <a href={website} target='_blank'>
+        <a href={website}>
           <button className={styles.btn}>Site web</button>
         </a>
       </div>

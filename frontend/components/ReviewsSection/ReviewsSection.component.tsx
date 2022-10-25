@@ -8,7 +8,7 @@ export const ReviewsSection: React.FC = () => (
     <h1 className={styles.heading}><span>a</span>vis</h1>
     <div className={styles.boxContainer}>
       { reviews.map((review, key) => (
-        <ReviewCard {...review} />
+        <ReviewCard {...review} key={key} />
       )) }
     </div>
   </section>

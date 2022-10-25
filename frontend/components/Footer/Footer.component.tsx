@@ -9,13 +9,13 @@ export const Footer: React.FC = () => (
     <h1 className={styles.credit}>design inspiré de <span>mr. web designer</span> | tous droits réservés.</h1>
 
     <div className={styles.icons}>
-      <a href="https://www.facebook.com/matteveanyes" target='_blank'>
+      <a href="https://www.facebook.com/matteveanyes" target='_blank' rel="noopener noreferrer">
         <FontAwesomeIcon icon={faFacebook} />
       </a>
-      <a href="https://www.linkedin.com/in/matthieu-seynaeve-27438852" target='_blank'>
+      <a href="https://www.linkedin.com/in/matthieu-seynaeve-27438852" target='_blank' rel="noopener noreferrer">
         <FontAwesomeIcon icon={faLinkedin} />
       </a>
-      <a href="https://github.com/DarkFidis" target='_blank'>
+      <a href="https://github.com/DarkFidis" target='_blank' rel="noopener noreferrer">
         <FontAwesomeIcon icon={faGithub} />
       </a>
     </div>
