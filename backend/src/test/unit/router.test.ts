@@ -10,12 +10,14 @@ describe('router unit tests', () => {
   let urlencodedBodyParser: jest.Mock
   let rawBodyParser: jest.Mock
   let cookieParserFactory: jest.Mock
+  let corsFactory: jest.Mock
   let express: jest.Mocked<typeof jestExpress>
   let cookieParserMw: jest.Mock
   let registerApp: jest.Mocked<RegisterApp>
   let helloWorldMw: jest.Mock
   let toExpressMw: jest.Mock
   let placesRouter: jest.Mock
+  let corsMw: jest.Mock
   beforeAll(() => {
     jsonBodyParser = jest.fn()
     urlencodedBodyParser = jest.fn()
@@ -37,12 +39,21 @@ describe('router unit tests', () => {
       .mockReturnValue(urlencodedBodyParser)
     when(bodyParser.raw).calledWith({ limit: '10mb', type: '*/*' }).mockReturnValue(rawBodyParser)
     jest.doMock('body-parser', () => bodyParser)
+    jest.doMock('cors')
+    corsFactory = require('cors')
+    corsMw = jest.fn()
+    when(corsFactory).calledWith({
+      origin: ['http://localhost:3000']
+    }).mockReturnValue(corsMw)
     jest.doMock('cookie-parser')
     cookieParserFactory = require('cookie-parser')
     cookieParserMw = jest.fn()
     when(cookieParserFactory).calledWith().mockReturnValue(cookieParserMw)
     ;({ registerApp } = require('../../main/router'))
     expect(cookieParserFactory).toHaveBeenNthCalledWith(1)
+    expect(corsFactory).toHaveBeenCalledWith({
+      origin: ['http://localhost:3000']
+    })
     const expressMock: jest.Mocked<typeof jestExpress> = jest.fn(
       jestExpress as ((...args: unknown[]) => unknown) | undefined,
     )
@@ -59,14 +70,15 @@ describe('router unit tests', () => {
       // When
       registerApp(app as Application)
       // Then
-      expect(app.use).toHaveBeenCalledWith(
+      expect(app.use).toHaveBeenNthCalledWith(1,
+        corsMw,
         cookieParserMw,
         jsonBodyParser,
         urlencodedBodyParser,
         rawBodyParser,
       )
       expect(app.get).toHaveBeenCalledWith('/', helloWorldExpressMw)
-      expect(app.use).toHaveBeenCalledWith('/api', placesRouter)
+      expect(app.use).toHaveBeenNthCalledWith(2,'/api', placesRouter)
     })
   })
 })

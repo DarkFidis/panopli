@@ -44,7 +44,7 @@ describe('Places middleware unit test', () => {
           type: 'a',
           website: 'https://www.hoctloca.com/',
         },
-        type: 'Feature',
+        type: 'PlacesSection',
       },
     ]
     req.body = {
@@ -79,7 +79,7 @@ describe('Places middleware unit test', () => {
           type: 'a',
           website: 'https://www.hoctloca.com/',
         },
-        type: 'Feature',
+        type: 'PlacesSection',
       },
     ]
     req.body = {

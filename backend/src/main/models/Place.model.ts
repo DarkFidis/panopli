@@ -39,7 +39,7 @@ const placeSchema = new Schema<Placeable, PlaceModel>({
     },
   },
   type: {
-    default: 'Feature',
+    default: 'PlacesSection',
     type: String,
   },
 })
