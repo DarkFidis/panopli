@@ -21,6 +21,7 @@ backend/.envrc.local
 
 # local dist files
 backend/dist/
+devops/docker/data/
 
 #ide
 .idea/*
