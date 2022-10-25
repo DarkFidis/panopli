@@ -1,7 +1,7 @@
 import { when } from 'jest-when'
+import { Logger } from 'winston'
 
 import { Workerable } from '../../main/types/worker'
-import { Logger } from '../../main/utils/logger'
 
 describe('index unit tests', () => {
   let processExitSpy: jest.SpyInstance

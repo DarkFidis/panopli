@@ -1,6 +1,6 @@
 import { connect, Mongoose } from 'mongoose'
+import { Logger } from 'winston'
 
-import { Loggerable } from '../types/logger'
 import { MongoClientable, MongoConfig, StaticMongoClientable } from '../types/mongo'
 import { staticImplements } from '../utils/helper'
 import { ServiceBase } from './service-base'
@@ -9,7 +9,7 @@ import { ServiceBase } from './service-base'
 export class MongoClient extends ServiceBase<MongoConfig> implements MongoClientable {
   protected _connection?: Mongoose
 
-  constructor(log: Loggerable, config: MongoConfig) {
+  constructor(log: Logger, config: MongoConfig) {
     super('mongo-client', log, config)
   }
 
@@ -26,7 +26,7 @@ export class MongoClient extends ServiceBase<MongoConfig> implements MongoClient
 
   public async end() {
     if (!this._connection) {
-      this._log.warn('No connection found')
+      this._log.warning('No connection found')
       return false
     }
     try {

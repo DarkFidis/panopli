@@ -1,10 +1,10 @@
 import { when } from 'jest-when'
+import { Logger } from 'winston'
 
-import { Loggerable } from '../../../main/types/logger'
 import { MongoClientable, MongoConfig, StaticMongoClientable } from '../../../main/types/mongo'
 
 describe('MongoClient', () => {
-  let log: jest.Mocked<Loggerable>
+  let log: jest.Mocked<Logger>
   let MongoClient: StaticMongoClientable
   const config: MongoConfig = {
     url: 'mongodb://url_de_test',
@@ -74,7 +74,7 @@ describe('MongoClient', () => {
         // When
         const result = await mongoClient.end()
         // Then
-        expect(log.warn).toHaveBeenCalledWith('No connection found')
+        expect(log.warning).toHaveBeenCalledWith('No connection found')
         expect(result).toBe(false)
       })
       it('should return false if disconnect fails', async () => {

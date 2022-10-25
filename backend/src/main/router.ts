@@ -5,6 +5,7 @@ import {
 } from 'body-parser'
 import * as cookieParserFactory from 'cookie-parser'
 import * as corsFactory from 'cors'
+
 import { helloWorldMw } from './middlewares/hello-world'
 import * as placesRouter from './routes'
 import { RegisterApp } from './types/web-server'
@@ -15,7 +16,7 @@ const urlencodedBodyParserMw = urlencodedBodyParserFactory({ extended: false })
 const rawBodyParserMw = rawBodyParserFactory({ limit: '10mb', type: '*/*' })
 const cookieParserMw = cookieParserFactory()
 const corsMw = corsFactory({
-  origin: ['http://localhost:3000']
+  origin: ['http://localhost:3000'],
 })
 
 export const registerApp: RegisterApp = (app) => {

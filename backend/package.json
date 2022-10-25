@@ -27,7 +27,7 @@
     "express": "4.17.1",
     "mongoose": "6.6.5",
     "reflect-metadata": "0.1.13",
-    "ts-log-debug": "5.5.3"
+    "winston": "3.8.2"
   },
   "devDependencies": {
     "@types/body-parser": "1.19.2",

@@ -1,9 +1,8 @@
 import { when } from 'jest-when'
-
-import { Loggerable } from '../../main/types/logger'
+import { Logger } from 'winston'
 
 describe('mongo', () => {
-  let log: jest.Mocked<Loggerable>
+  let log: jest.Mocked<Logger>
   let MongoClient: jest.Mock
   const config = {
     url: 'mongodb://url',

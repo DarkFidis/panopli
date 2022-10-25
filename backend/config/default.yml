@@ -1,5 +1,6 @@
 log:
-  name: Express-template
+  name: Panopli-local
+  level: debug
 mongo:
   host: localhost:27017
   dbName: tourisme

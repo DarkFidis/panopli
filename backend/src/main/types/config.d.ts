@@ -1,6 +1,5 @@
-import { ClusterConfig } from './cluster'
-
 export interface LogConfig {
+  level: string
   name: string
 }
 
@@ -10,7 +9,6 @@ export interface MongoConf {
 }
 
 export interface Config {
-  cluster: ClusterConfig
   log: LogConfig
   mongo: MongoConf
 }
