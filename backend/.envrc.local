@@ -1,2 +1,3 @@
-MONGO_USER=clientPoc
+MONGO_USER=user
 MONGO_PASSWORD=password
+MONGO_HOST=localhost
