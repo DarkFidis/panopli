@@ -1,41 +1,45 @@
 version: '3.4'
 
 services:
-  panopli-db:
+  db:
     image: mongo
     container_name: panopli-db
-    ports:
-      - "27017:27017"
     volumes:
       - ./data/mongodb:/data/db
       - ./data/mongodb-config:/data/configdb
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ADMIN_USERNAME:-root}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ADMIN_PASSWORD:-Secr3t!}
-    network_mode: bridge
     restart: unless-stopped
 
-  panopli-backend:
+  api:
     container_name: panopli-backend
     build:
       context: ../../backend
     ports:
       - "5000:5000"
     environment:
-      MONGO_USER: clientPoc
+      MONGO_USER: client
       MONGO_PASSWORD: password
     restart: unless-stopped
-    network_mode: bridge
     depends_on:
-      - panopli-db
+      - db
 
-  panopli-frontend:
+  client:
     build:
       context: ../../frontend
     container_name: panopli-frontend
     ports:
       - "3000:3000"
     restart: unless-stopped
-    network_mode: bridge
     depends_on:
-      - panopli-backend
+      - api
+
+  reverse-proxy:
+    build:
+      context: ./reverse-proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - api
+      - db

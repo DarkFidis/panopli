@@ -53,6 +53,61 @@ yarn build
 yarn start
 ```
 
+### Docker
+
+#### Pré-requis:
+
+**Admin Mongo**
+
+Avant de lancer le déploiement, il faut préciser les credentials pour le conteneur Mongo. Ce sont les variables d'environnement utilisées pour le service `db` 
+dans le fichier `devops/docker/docker-compose.yml` : 
+
+- `MONGO_INITDB_ROOT_USERNAME` : admin
+
+- `MONGO_INITDB_ROOT_PASSWORD` : mot de passe de l'admin
+
+**Client Mongo**
+
+Les credentials du client Mongo sont utilisés pour lancer le service `api` : 
+
+- `MONGO_USER` : client
+
+- `MONGO_PASSWORD` : mot de passe du client
+
+
+
+#### Lancement
+
+Pour lancer le déploiement via Docker, aller dans le folder `devops/docker`, puis lancer la commande
+
+```shell
+docker-compose up -d
+```
+
+#### Configuration de Mongo
+
+- Se connecter en mode interactif sur le conteneur de Mongo : 
+
+```shell
+docker exec -it panopli-db sh
+```
+
+- Lancer le shell Mongo dans le conteneur puis s'authentifier avec les credentials de l'admin précisés lors du lancement du conteneur : 
+
+```shell
+mongo
+use admin
+db.auth({ user: 'root', pwd: 'Secr3t!'})
+```
+
+- Créer un utilisateur de la base :
+
+```shell
+db.createUser({ user: 'client', pwd: 'clientPassword', roles: [{ role: 'readWrite', db: 'dbName'}]})
+```
+
+> On réutilise ici les crédentials du client Mongo qui ont servi à lancer le service `api`
+
 
 
 

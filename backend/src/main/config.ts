@@ -12,6 +12,10 @@ const mongoConfiguration = nodeConfig.has('mongo')
 
 const { MONGO_HOST, MONGO_PASSWORD, MONGO_USER } = process.env
 const { dbName } = mongoConfiguration
+const mongoUrl =
+  process.env.NODE_ENV === 'production'
+    ? `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${dbName}`
+    : `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:27017/${dbName}`
 export const mongo = {
-  url: `mongodb://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOST}:27017/${dbName}`,
+  url: mongoUrl,
 }
