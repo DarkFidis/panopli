@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About component unit test should match snapshot 1`] = `
+<div>
+  <section
+    class="about"
+    id="about"
+  >
+    <h1
+      class="heading"
+    >
+      <span>
+        a
+      </span>
+       
+      <span>
+        p
+      </span>
+      ropos
+    </h1>
+    <div
+      class="row"
+    >
+      <div
+        class="image"
+      >
+        <img
+          alt=""
+          src="/images/about-img.png"
+        />
+      </div>
+      <div
+        class="content"
+      >
+        <h3>
+          Qui sommes nous ?
+        </h3>
+        <p>
+          Matthieu Seynaeve, ancien cartographe reconverti développeur web, vous propose un petit service simple, afin que vous puissiez trouver un bon restaurant près de votre emplacement. Cette application repose sur du requêtage de proximité basé sur Mongo DB ainsi que Leaflet JS pour la partie cartographie
+        </p>
+        <br />
+        <p>
+          A vous de trouver votre bonheur !
+        </p>
+        <a
+          href="https://darkfidis.github.io/portfolio/"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <button
+            class="btn"
+          >
+            En savoir plus
+          </button>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+`;

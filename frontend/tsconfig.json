@@ -11,10 +11,23 @@
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "sourceMap": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@pages/*": [
+        "src/pages/*"
+      ]
+    },
+
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules/*", "**/*.test.tsx"
+  ],
 }

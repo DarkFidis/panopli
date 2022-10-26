@@ -18,7 +18,7 @@ describe('Frontend app e2e test', () => {
       url: /api\/places/
     }).as('nearRequest')
     cy.get('input[name=maxDistance]').clear().type('1000')
-    cy.get('#map').click(475, 250)
+    cy.wait(500).get('#map').click(475, 250)
     cy.get('form button').click()
     cy.wait('@nearRequest')
     cy.get('.leaflet-marker-pane img').should('have.length', 4)

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar component unit test should match snapshot 1`] = `
+<div>
+  <nav
+    class="navbar"
+  >
+    <ul>
+      <li>
+        <a
+          class="active"
+          href="#home"
+        >
+          accueil
+        </a>
+      </li>
+      <li>
+        <a
+          href="#feature"
+        >
+          restaurants
+        </a>
+      </li>
+      <li>
+        <a
+          href="#about"
+        >
+          a propos
+        </a>
+      </li>
+      <li>
+        <a
+          href="#review"
+        >
+          avis
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;

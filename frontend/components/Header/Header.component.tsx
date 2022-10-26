@@ -4,7 +4,7 @@ import {Navbar} from "../Navbar";
 
 export const Header: React.FC = () => (
   <header className={styles.header}>
-    <a href="#" className={styles.logo}>travel <span>.</span></a>
+    <a href="#" className={styles.logo}>resto <span>.</span></a>
     <Navbar />
   </header>
 )

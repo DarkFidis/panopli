@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Form component unit test should match snapshot 1`] = `
+<div>
+  <div
+    class="formContainer"
+  >
+    <form>
+      <h3>
+        Trouve ton resto
+      </h3>
+      <span>
+        Distance minimale
+      </span>
+      <input
+        name="minDistance"
+        type="number"
+        value="0"
+      />
+      <span>
+        Distance maximale
+      </span>
+      <input
+        name="maxDistance"
+        type="number"
+        value="1000"
+      />
+      <br />
+      <button
+        color="info"
+        type="submit"
+      >
+        Send
+      </button>
+    </form>
+  </div>
+</div>
+`;
