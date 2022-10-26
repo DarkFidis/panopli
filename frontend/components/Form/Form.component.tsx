@@ -7,7 +7,7 @@ export const Form: React.FC<FormProps> = ({ submit, origin }) => (
   <div className={styles.formContainer}>
     <Formik
       onSubmit={submit}
-      initialValues={{minDistance: 0, maxDistance: 10000}}
+      initialValues={{minDistance: 0, maxDistance: 1000}}
     >
       {({ values, handleBlur, handleChange, handleSubmit, isSubmitting}) => (
         <form onSubmit={handleSubmit}>
@@ -29,7 +29,7 @@ export const Form: React.FC<FormProps> = ({ submit, origin }) => (
               value={values.maxDistance}
             />
             <br/>
-            <button type="submit" color="info" disabled={!origin }>Send</button>
+            <button type="submit" color="info" disabled={!origin}>Send</button>
         </form>
       )}
     </Formik>
