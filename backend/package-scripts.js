@@ -168,6 +168,12 @@ module.exports = {
       },
     },
     nps: 'nps',
+    seed: {
+      default: {
+        description: 'Seed database',
+        script: `ts-node ${join(baseDir, 'src/main/seed/seedScript')}`
+      }
+    },
     start: {
       default: {
         description: 'Start the web application',

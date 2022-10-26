@@ -44,6 +44,8 @@ const placeSchema = new Schema<Placeable, PlaceModel>({
   },
 })
 
+placeSchema.index({ location: "2dsphere" })
+
 placeSchema.statics.getNear = (origin, minDistance, maxDistance) =>
   Place.find({
     location: {

@@ -12,9 +12,7 @@
     "nps": "nps",
     "start": "nps start",
     "test": "nps test",
-    "version": "echo $npm_package_version",
-    "nodeversion": "echo $npm_package_engines_node",
-    "npmversion": "echo $npm_package_engines_npm"
+    "seed": "nps seed"
   },
   "keywords": [],
   "author": "",
