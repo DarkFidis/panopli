@@ -19,6 +19,7 @@ describe('Place model', () => {
     it('should export Place model', () => {
       // Given
       Schema.mockReturnValue({
+        index: jest.fn(),
         statics: {},
       })
       // When
