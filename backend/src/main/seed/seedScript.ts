@@ -1,11 +1,11 @@
-import {mongoClient} from "../mongo";
-import {placesData} from "./data";
-import {Place} from "../models/Place.model";
+import { Place } from '../models/Place.model'
+import { mongoClient } from '../mongo'
+import { placesData } from './data'
 
 const seedScript = async () => {
   try {
     await mongoClient.start()
-    const promises = placesData.map(place => {
+    const promises = placesData.map((place) => {
       const newPlace = new Place(place)
       return newPlace.save()
     })
@@ -16,4 +16,4 @@ const seedScript = async () => {
   }
 }
 
-seedScript().then()
+seedScript().catch((err) => console.error(err))
