@@ -100,13 +100,20 @@ use admin
 db.auth({ user: 'root', pwd: 'Secr3t!'})
 ```
 
-- Créer un utilisateur de la base :
+- Switcher sur la nouvelle base à créer puis créer un utilisateur de la base :
 
 ```shell
+use mydb
 db.createUser({ user: 'client', pwd: 'clientPassword', roles: [{ role: 'readWrite', db: 'dbName'}]})
 ```
 
 > On réutilise ici les crédentials du client Mongo qui ont servi à lancer le service `api`
+
+- Pour seed la database, se connecter à la console du conteneur `panopli-backend` puis lancer la commande NPM : 
+
+```shell
+npm run seed
+```
 
 
 

@@ -19,6 +19,7 @@ services:
     ports:
       - "5000:5000"
     environment:
+      MONGO_HOST: db
       MONGO_USER: client
       MONGO_PASSWORD: password
     restart: unless-stopped
