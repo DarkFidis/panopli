@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: panopli-back
+  labels:
+    app: panopli-back
+spec:
+  containers:
+    - name: panopli-back
+      imagePullPolicy: "Always"
+      image: darkfidis/panopli:backend
+      env:
+        - name: MONGO_HOST
+          value: mongodb
+        - name: MONGO_USER
+          value: clientPoc
+        - name: MONGO_PASSWORD
+          value: password
+      ports:
+        - containerPort: 5000
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: panopli-backend
+spec:
+  selector:
+    app: panopli-back
+  type: ClusterIP
+  ports:
+    - port: 5000
+      targetPort: 5000

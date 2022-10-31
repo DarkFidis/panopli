@@ -15,9 +15,7 @@ const jsonBodyParserMw = jsonBodyParserFactory()
 const urlencodedBodyParserMw = urlencodedBodyParserFactory({ extended: false })
 const rawBodyParserMw = rawBodyParserFactory({ limit: '10mb', type: '*/*' })
 const cookieParserMw = cookieParserFactory()
-const corsMw = corsFactory({
-  origin: ['http://localhost:3000'],
-})
+const corsMw = corsFactory()
 
 export const registerApp: RegisterApp = (app) => {
   app.use(corsMw, cookieParserMw, jsonBodyParserMw, urlencodedBodyParserMw, rawBodyParserMw)
