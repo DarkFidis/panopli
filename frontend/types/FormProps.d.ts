@@ -1,6 +1,5 @@
-import {Coordinates} from "./place";
+import React from "react";
 
 export type FormProps = {
-  origin: Optional<Coordinates>
   submit: React.EventHandler<any>
 }

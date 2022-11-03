@@ -3,7 +3,7 @@ import styles from "../../styles/Form.module.css";
 import {FormProps} from "../../types/FormProps";
 import { Formik } from "formik";
 
-export const Form: React.FC<FormProps> = ({ submit, origin }) => (
+export const Form: React.FC<FormProps> = ({ submit }) => (
   <div className={styles.formContainer}>
     <Formik
       onSubmit={submit}
@@ -29,7 +29,7 @@ export const Form: React.FC<FormProps> = ({ submit, origin }) => (
               value={values.maxDistance}
             />
             <br/>
-            <button type="submit" color="info" disabled={!origin}>Send</button>
+            <button type="submit" color="info">Send</button>
         </form>
       )}
     </Formik>

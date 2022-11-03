@@ -6,7 +6,7 @@ import {MapSection} from "../../components/MapSection";
 
 export const MapTainer: React.FC = () => {
   const [places, setPlaces] = useState<Place[]>([])
-  const [origin, setOrigin] = useState<Coordinates | null>(null)
+  const [origin, setOrigin] = useState<Coordinates>([48.85884, 2.3473])
   const [distances, setDistances] = useState<NearOptions | null>(null)
   const [activePlace, setActivePlace] = useState<string>('')
   const nearRequestHandler = (options: NearOptions) => {
@@ -21,7 +21,6 @@ export const MapTainer: React.FC = () => {
       minDistance,
     }
     fetchPlaces(body).then(places => {
-      console.log({ place: places[0]})
       setPlaces(places)
       setDistances({ maxDistance, minDistance })
     }).catch(err => console.error(err.message))

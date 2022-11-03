@@ -26,7 +26,7 @@ export const MapSection: React.FC<MapSectionProps> = ({ activePlace, distances, 
         ))}
         { distances && origin && <DynamicDistances distances={distances} origin={origin} />}
       </DynamicMap>
-      <Form origin={origin} submit={submitMethod} />
+      <Form submit={submitMethod} />
     </section>
   </>
 )
