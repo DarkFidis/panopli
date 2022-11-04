@@ -3,8 +3,15 @@ import styles from "../../styles/PlaceCard.module.css";
 import {PlaceCardProps} from "../../types/PlaceCardProps";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import {useDispatch} from "react-redux";
+import {AppDispatch} from "../../store";
+import {changeActivePlace} from "../../store/slices/map";
 
-export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place, setActivePlace }) => {
+export const PlaceCard: React.FC<PlaceCardProps> = ({ isActive,place }) => {
+  const dispatch = useDispatch<AppDispatch>()
+  const setActivePlace = (id: string) => {
+    dispatch(changeActivePlace(id))
+  }
   const { address, name, rating, website } = place.properties
   const { city, postalCode, street } = address
   const stars = Math.ceil(+rating)

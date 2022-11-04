@@ -1,16 +1,27 @@
 import React from "react";
 import styles from "../../styles/Form.module.css";
-import {FormProps} from "../../types/FormProps";
 import { Formik } from "formik";
+import {useDispatch, useSelector} from "react-redux";
+import {changeDistances, fetchPlacesThunk, getOrigin} from "../../store/slices/map";
+import {NearOptions} from "../../types/place";
+import {AppDispatch} from "../../store";
 
-export const Form: React.FC<FormProps> = ({ submit }) => (
-  <div className={styles.formContainer}>
-    <Formik
-      onSubmit={submit}
-      initialValues={{minDistance: 0, maxDistance: 1000}}
-    >
-      {({ values, handleBlur, handleChange, handleSubmit, isSubmitting}) => (
-        <form onSubmit={handleSubmit}>
+export const Form: React.FC = () => {
+  const origin = useSelector(getOrigin)
+  const dispatch = useDispatch<AppDispatch>()
+  const submit = (formValues: NearOptions) => {
+    const { maxDistance, minDistance } = formValues
+    dispatch(fetchPlacesThunk({ maxDistance, minDistance, origin }))
+    dispatch(changeDistances({ maxDistance, minDistance }))
+  }
+  return (
+    <div className={styles.formContainer}>
+      <Formik
+        onSubmit={submit}
+        initialValues={{minDistance: 0, maxDistance: 1000}}
+      >
+        {({ values, handleBlur, handleChange, handleSubmit, isSubmitting}) => (
+          <form onSubmit={handleSubmit}>
             <h3>Trouve ton resto</h3>
             <span>Distance minimale</span>
             <input
@@ -30,10 +41,11 @@ export const Form: React.FC<FormProps> = ({ submit }) => (
             />
             <br/>
             <button type="submit" color="info">Send</button>
-        </form>
-      )}
-    </Formik>
-  </div>
-)
+          </form>
+        )}
+      </Formik>
+    </div>
+  )
+}
 
 export default Form

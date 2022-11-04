@@ -27,9 +27,9 @@ export interface Place {
 }
 
 export type PlaceInput = {
-  maxDistance: Optional<number>
-  minDistance: Optional<number>
-  origin: Optional<Coordinates>
+  maxDistance: number
+  minDistance: number
+  origin: Coordinates
 }
 
 export type NearOptions = {
