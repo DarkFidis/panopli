@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  adminName: cm9vdA==
+  adminPass: cGFzc3dvcmQ=
+  clientName: Y2xpZW50UG9j
+  clientPass: cGFzc3dvcmQ=
+kind: Secret
+metadata:
+  name: mongo
+  namespace: default

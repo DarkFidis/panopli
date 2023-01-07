@@ -137,28 +137,17 @@ minikube addons enable ingress
 
 _Etape 1 : Configuration de l'environnement_
 
-Préciser les variables d'environnement pour lancer le pod de la base Mongo dans le fichier `k8s/db-pod.yml`:
+Préciser le contenu des variables encodé en base 64 dans le fichier `db-creds.yml`, 4 variables sont disponibles dans le namespace `data` : 
 
-```yaml
-env:
-  - name: MONGO_INITDB_ROOT_USERNAME
-    value: root
-  - name: MONGO_INITDB_ROOT_PASSWORD
-    value: password
-```
+- `adminName`: Nom de l'admin de la base Mongo
 
-Remplacer la valeur des clés `value` par ce que vous voulez
+- `adminPass`: Mot de passe de l'admin
 
-Idem pour la configuration du serveur backend, dans le fichier `k8s/server.yml` : 
+- `clientName`: Nom du client avec lequel le backend va intéragir avec Mongo
 
-```yaml
-- name: MONGO_USER
-  value: clientPoc
-- name: MONGO_PASSWORD
-  value: password
-```
+- `clientPass`: Mot de passe du client
 
-> Ne pas modifier la valeur de `MONGO_HOST` sauf si vous changez le nom du service relatif à Mongo (`k8s/db-service.yml`)
+> Ne pas modifier la valeur de `MONGO_HOST` dans les specs du backend (`server.yml`) sauf si vous changez le nom du service relatif à Mongo (`k8s/db-service.yml`)
 
 Aller dans le folder `devops` et lancer la commande 
 

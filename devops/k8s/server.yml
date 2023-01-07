@@ -13,9 +13,16 @@ spec:
         - name: MONGO_HOST
           value: mongodb
         - name: MONGO_USER
-          value: clientPoc
+          valueFrom:
+            secretKeyRef:
+              name: mongo
+              key: clientName
         - name: MONGO_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: mongo
+              key: clientPass
+
       ports:
         - containerPort: 5000
 

@@ -14,9 +14,17 @@ spec:
       image: mongo
       env:
         - name: MONGO_INITDB_ROOT_USERNAME
-          value: root
+          valueFrom:
+            secretKeyRef:
+              name: mongo
+              key: adminName
+
         - name: MONGO_INITDB_ROOT_PASSWORD
-          value: password
+          valueFrom:
+            secretKeyRef:
+              name: mongo
+              key: adminPass
+
       ports:
         - containerPort: 27017
           name: mongodb-port
