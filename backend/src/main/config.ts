@@ -8,7 +8,7 @@ export const log = nodeConfig.has('log')
 
 const mongoConfiguration = nodeConfig.has('mongo')
   ? nodeConfig.get<Config['mongo']>('mongo')
-  : { dbName: 'tourisme', host: 'localhost:27017' }
+  : { dbName: 'tourisme' }
 
 const { MONGO_HOST, MONGO_PASSWORD, MONGO_USER } = process.env
 const { dbName } = mongoConfiguration
