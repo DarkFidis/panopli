@@ -22,7 +22,6 @@ spec:
             secretKeyRef:
               name: mongo
               key: clientPass
-
       ports:
         - containerPort: 5000
 
