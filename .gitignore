@@ -24,7 +24,8 @@ backend/dist/
 devops/docker/data/
 
 #ide
-.idea/*
+.idea/
+*/.idea/*
 .vscode/
 
 #yarn
