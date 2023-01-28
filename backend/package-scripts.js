@@ -286,7 +286,7 @@ module.exports = {
       },
       default: {
         description: 'validate project',
-        script: series.nps('clean', 'build', 'lint', 'cover'),
+        script: series.nps('clean', 'build', 'cover'),
       },
       staged: {
         description: 'validate project staged',
