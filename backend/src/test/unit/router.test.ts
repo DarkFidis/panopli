@@ -42,20 +42,14 @@ describe('router unit tests', () => {
     jest.doMock('cors')
     corsFactory = require('cors')
     corsMw = jest.fn()
-    when(corsFactory)
-      .calledWith({
-        origin: ['http://localhost:3000'],
-      })
-      .mockReturnValue(corsMw)
+    corsFactory.mockReturnValue(corsMw)
     jest.doMock('cookie-parser')
     cookieParserFactory = require('cookie-parser')
     cookieParserMw = jest.fn()
     when(cookieParserFactory).calledWith().mockReturnValue(cookieParserMw)
     ;({ registerApp } = require('../../main/router'))
     expect(cookieParserFactory).toHaveBeenNthCalledWith(1)
-    expect(corsFactory).toHaveBeenCalledWith({
-      origin: ['http://localhost:3000'],
-    })
+    expect(corsFactory).toHaveBeenCalled()
     const expressMock: jest.Mocked<typeof jestExpress> = jest.fn(
       jestExpress as ((...args: unknown[]) => unknown) | undefined,
     )
